@@ -1,0 +1,377 @@
+/*
+Theme Name: UTK Demo
+Theme URI: https://example.com
+Description: A WordPress theme inspired by the University of Tennessee Knoxville Homepage Layout Option One
+Version: 1.0
+Author: Your Name
+Author URI: https://example.com
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: utk-demo
+*/
+
+/* CSS Variables - UTK Brand Colors */
+:root {
+    --color-orange: #ff8200;
+    --color-river-blue: #1a73c5;
+    --color-smokey-gray: #4b4b4b;
+    --color-light-bg: #f6f6f6;
+    --color-white: #ffffff;
+    --color-black: #000000;
+
+    --font-primary: 'Montserrat', sans-serif;
+    --font-headline: 'Sofia Sans Extra Condensed', sans-serif;
+
+    --container-width: 1200px;
+    --spacing-small: 1rem;
+    --spacing-medium: 2rem;
+    --spacing-large: 4rem;
+}
+
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-primary);
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--color-smokey-gray);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    color: var(--color-river-blue);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-small);
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: var(--color-orange);
+    color: var(--color-white);
+    border: 2px solid var(--color-orange);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background-color: transparent;
+    color: var(--color-orange);
+    text-decoration: none;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--color-river-blue);
+    border-color: var(--color-river-blue);
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-river-blue);
+    color: var(--color-white);
+}
+
+/* Header Styles */
+.site-header {
+    background-color: var(--color-white);
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-small) 0;
+}
+
+.site-logo {
+    max-width: 200px;
+}
+
+.utility-nav {
+    display: flex;
+    gap: var(--spacing-small);
+    list-style: none;
+}
+
+.utility-nav a {
+    color: var(--color-smokey-gray);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.search-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+}
+
+/* Main Navigation */
+.main-navigation {
+    background-color: var(--color-smokey-gray);
+}
+
+.main-navigation ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-medium);
+    padding: var(--spacing-small) 0;
+}
+
+.main-navigation a {
+    color: var(--color-white);
+    font-weight: 500;
+}
+
+.main-navigation a:hover {
+    color: var(--color-orange);
+    text-decoration: none;
+}
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    height: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+    color: var(--color-white);
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    max-width: 800px;
+    padding: 0 var(--spacing-small);
+}
+
+.hero-superheading {
+    font-family: var(--font-headline);
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 0.5rem;
+}
+
+.hero-title {
+    font-family: var(--font-headline);
+    font-size: 4rem;
+    line-height: 1.1;
+    margin-bottom: var(--spacing-small);
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-small);
+}
+
+.hero-description {
+    font-size: 1.1rem;
+    margin-bottom: var(--spacing-medium);
+}
+
+/* Billboard Section */
+.billboard-section {
+    background-color: var(--color-orange);
+    color: var(--color-white);
+    padding: var(--spacing-large) 0;
+    text-align: center;
+}
+
+.billboard-section h2 {
+    font-family: var(--font-headline);
+    font-size: 3rem;
+    margin-bottom: var(--spacing-small);
+}
+
+/* Media & Text Sections */
+.media-text-section {
+    padding: var(--spacing-large) 0;
+}
+
+.media-text-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-large);
+    align-items: center;
+}
+
+.media-text-content.reverse {
+    direction: rtl;
+}
+
+.media-text-content.reverse > * {
+    direction: ltr;
+}
+
+.media-text-image img {
+    width: 100%;
+    height: auto;
+}
+
+.media-text-text h2 {
+    font-family: var(--font-headline);
+    font-size: 2.5rem;
+    color: var(--color-smokey-gray);
+    margin-bottom: var(--spacing-small);
+}
+
+.media-text-text p {
+    margin-bottom: var(--spacing-small);
+}
+
+/* Points of Pride Section */
+.points-of-pride {
+    background-color: var(--color-light-bg);
+    padding: var(--spacing-large) 0;
+}
+
+.points-of-pride h2 {
+    font-family: var(--font-headline);
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: var(--spacing-large);
+}
+
+.pride-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-medium);
+}
+
+.pride-item {
+    text-align: center;
+}
+
+.pride-number {
+    font-family: var(--font-headline);
+    font-size: 4rem;
+    color: var(--color-orange);
+    line-height: 1;
+}
+
+.pride-description {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--color-smokey-gray);
+    margin: var(--spacing-small) 0;
+}
+
+.pride-context {
+    font-size: 0.9rem;
+    color: var(--color-smokey-gray);
+}
+
+/* Footer */
+.site-footer {
+    background-color: var(--color-smokey-gray);
+    color: var(--color-white);
+    padding: var(--spacing-large) 0 var(--spacing-small);
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: var(--spacing-large);
+    margin-bottom: var(--spacing-medium);
+}
+
+.footer-logo img {
+    max-width: 200px;
+    filter: brightness(0) invert(1);
+}
+
+.footer-contact h3 {
+    margin-bottom: var(--spacing-small);
+}
+
+.footer-nav {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-medium);
+    list-style: none;
+    padding-top: var(--spacing-small);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.footer-nav a {
+    color: var(--color-white);
+    font-size: 0.9rem;
+}
+
+.footer-nav a:hover {
+    color: var(--color-orange);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header-top {
+        flex-direction: column;
+        gap: var(--spacing-small);
+    }
+
+    .utility-nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .main-navigation ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .media-text-content,
+    .media-text-content.reverse {
+        grid-template-columns: 1fr;
+        direction: ltr;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .footer-nav {
+        flex-direction: column;
+        align-items: center;
+    }
+}
